@@ -1,5 +1,5 @@
 // Task 1: Verification Log
-console.log("Script Manager Started");
+console.log("Status Manager Started");
 
 // Global variable setup (required for Task 10 using setInterval/clearInterval)
 let intervalId = null;
@@ -44,7 +44,6 @@ highlightListItems();
 // here to handle the click event on the toggleButton [6, 7].
 
 function createTimestamp() {
-  statusOutput.innerHTML = ''; // Clear previous timestamp
   const span = document.createElement("span");
   span.innerHTML = new Date().toLocaleTimeString();
   statusOutput.appendChild(span);
