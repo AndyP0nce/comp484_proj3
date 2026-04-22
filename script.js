@@ -44,7 +44,7 @@ highlightListItems();
 // here to handle the click event on the toggleButton [6, 7].
 
 function createTimestamp() {
-    statusOutput.innerHTML = ''; // Clear previous timestamp
+  statusOutput.innerHTML = ''; // Clear previous timestamp
   const span = document.createElement("span");
   span.innerHTML = new Date().toLocaleTimeString();
   statusOutput.appendChild(span);
@@ -59,12 +59,11 @@ function toggleStatus(e) {
 
     // task 7 : yellow background when visible reset when hidden
     if (!statusOutput.classList.contains('hidden')) {
-        mainTitle.style.backgroundColor = 'Green';  
+        mainTitle.style.backgroundColor = 'yellow';  
         createTimestamp();  
     } else { 
         mainTitle.style.backgroundColor = '';    
     }
-
 }
 
 toggleButton.addEventListener('click', toggleStatus);
