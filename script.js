@@ -35,6 +35,7 @@ function highlightListItems() {
     item.style.color = 'blue'; 
   });
 }
+
 highlightListItems();
 
 
@@ -44,10 +45,6 @@ highlightListItems();
 // here to handle the click event on the toggleButton [6, 7].
 
 function createTimestamp() {
-  const existing = statusOutput.querySelector("span");
-  if (existing) {
-    statusOutput.removeChild(existing);
-  }
   const span = document.createElement("span");
   span.innerHTML = new Date().toLocaleTimeString();
   statusOutput.appendChild(span);
