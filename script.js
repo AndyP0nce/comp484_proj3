@@ -44,6 +44,10 @@ highlightListItems();
 // here to handle the click event on the toggleButton [6, 7].
 
 function createTimestamp() {
+  const existing = statusOutput.querySelector("span");
+  if (existing) {
+    statusOutput.removeChild(existing);
+  }
   const span = document.createElement("span");
   span.innerHTML = new Date().toLocaleTimeString();
   statusOutput.appendChild(span);
@@ -73,6 +77,7 @@ toggleButton.addEventListener('click', toggleStatus);
 // timerButton using addEventListener for 'click' and 'dblclick' [10].
 
 function startFlashing() {
+    stopFlashing(); // Ensure any existing interval is cleared before starting a new one    
     clearInterval(intervalId);
     intervalId = setInterval(() => {
         controlPanel.classList.toggle('hidden');
@@ -86,3 +91,18 @@ function stopFlashing() {
 
 timerButton.addEventListener('click', startFlashing);
 timerButton.addEventListener('dblclick', stopFlashing);
+
+/* ======================================= */
+// --- Confetti: JSON Fetch Animation ---
+// fetch() loads confetti.json, parses it with .json(), then passes
+// the config object directly to the canvas-confetti library.
+
+function launchConfetti() {
+  // fetch the confetti settings from the local JSON file
+  fetch('./confetti.json')
+    .then(res => res.json())        // parse the response body as JSON
+    .then(config => confetti(config)); // fire the animation with those settings
+}
+
+// bind the button click to the confetti launcher
+document.getElementById('confetti-button').addEventListener('click', launchConfetti);

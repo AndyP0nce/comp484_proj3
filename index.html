@@ -6,6 +6,8 @@
     <title>Status Manager Project</title>
     <!-- Link to the CSS file for styling (Task 2) -->
     <link rel="stylesheet" href="style.css" />
+    <!-- canvas-confetti library loaded from CDN for the confetti animation -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   </head>
   <body>
     <div id="app-container">
@@ -25,6 +27,9 @@
         <p>Current Status Information:</p>
         <!-- Task 8 will append elements here -->
       </div>
+
+      <!-- Confetti button: triggers the fetch-based confetti animation -->
+      <button id="confetti-button">Launch Confetti</button>
 
       <!-- Unordered List (Task 1 & Task 9 iteration target) -->
       <h2>Item List</h2>
